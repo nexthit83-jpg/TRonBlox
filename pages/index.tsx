@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react'
 import { supabase } from '../supabaseClient'
 import Link from 'next/link'
+import Navbar from '../components/Navbar'
 
 interface Shirt {
   id: string
@@ -34,14 +35,7 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-gray-900 text-white px-6 py-8">
-      <header className="mb-8 flex justify-between items-center">
-        <h1 className="text-3xl font-bold">TronBlox Shirts</h1>
-        <nav>
-          <Link href="/" className="mr-4 hover:text-blue-400">Home</Link>
-          <Link href="/upload" className="mr-4 hover:text-blue-400">Upload</Link>
-          <Link href="/login" className="hover:text-blue-400">Login</Link>
-        </nav>
-      </header>
+      <Navbar />
 
       {loading ? (
         <p>Loading shirts...</p>

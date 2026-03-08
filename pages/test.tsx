@@ -2,7 +2,13 @@ import { supabase } from '../supabaseClient'
 import { useEffect, useState } from 'react'
 
 export default function TestPage() {
-  const [users, setUsers] = useState<any[]>([])
+type User = {
+  id: string
+  username?: string
+  email?: string
+}
+
+const [users, setUsers] = useState<User[]>([])
 
   useEffect(() => {
     const fetchUsers = async () => {
